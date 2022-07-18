@@ -53,5 +53,10 @@ contract DutchAuction {
         require(msg.value >= price, "ETH < price");
 
         nft.transferFrom(seller, msg.sender, nftId);
+        uint256 refund = msg.value - price;
+        if (refund > 0) {
+            payable(msg.sender).transfer(refund);
+        }
+        selfdestruct(seller);
     }
 }
