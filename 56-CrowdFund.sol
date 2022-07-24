@@ -2,7 +2,7 @@
 pragma solidity ^0.8.7;
 import "./IERC20.sol";
 
-// 众筹合约
+// 众筹合约, 未部署
 
 contract CrowdFund {
     event Launch(
